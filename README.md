@@ -32,7 +32,7 @@ Before starting, ensure you have the following installed on your machine:
 ### DBT Tasks
 
 1. **Set Up Local PostgreSQL Database:**
-   Use [Docker](https://www.docker.com/products/docker-desktop/) to create a local postgres database. Provide instructions on how to run the database below. You will use this database to run your dbt models.
+   Use [Docker](https://www.docker.com/products/docker-desktop/) to create a local postgres database. Provide instructions on how to run the database below. You will use this database to run your dbt models. Make sure the database has a user `postgres` with password `mysecretpassword` and a database `postgres`. It should be available at `http://localhost:5432`.
 
       ```sh
       # TODO: Add instructions for running dockerized postgres here.
