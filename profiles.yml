@@ -1,0 +1,11 @@
+de_student_task:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: mysecretpassword  # Hardcoding passwords is a bad idea
+      port: 5432
+      dbname: postgres
+      schema: public

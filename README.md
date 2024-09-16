@@ -1,21 +1,98 @@
-# Onu.Energy Data Engineering Task
+# Data Engineering Student Assignment - Onu.Energy
 
-Welcome to the Onu.Energy data engineering task! This task is designed to assess your ability to pull data from a public API using Python and write the results to a storage solution of your choice. Please ensure that this task takes no more than 2 hours to complete.
+Welcome to the data engineering student assignment for Onu.Energy! 
 
-## Task Description
+## Time Limit
 
-Your objective is to:
+Please take no more than **90-120 minutes** to complete this assignment. We understand that time is limited, so focus on delivering a functional and correct solution within the given timeframe. Definitely don't do ALL of the optional tasks. We want to see what you can do in a short amount of time.
+
+## Submission
+
+Please submit your work as a private GitHub repository. Add the following users as collaborators to the repository:
+
+- <ds@onu.energy>
+- <ar@onu.energy>
+
+## Evaluation Criteria
+
+- **It runs:** Does the code run without error?
+- **We can read it:** Is the code well-organized, readable, and made for humans?
+
+## Task 1 (Required, 30-120 minutes)
+
+In this task, you will be working with a dbt (data build tool) project. Your primary objectives are to add dbt models, write tests for these models, and set up a local PostgreSQL database using Docker.
+
+### Prerequisites
+
+Before starting, ensure you have the following installed on your machine:
+
+- Docker
+- Python and `pip`
+
+### DBT Tasks
+
+1. **Set Up Local PostgreSQL Database:**
+   Use [Docker](https://www.docker.com/products/docker-desktop/) to create a local postgres database. Provide instructions on how to run the database below. You will use this database to run your dbt models.
+
+      ```sh
+      # TODO: Add instructions for running dockerized postgres here.
+      ```
+
+2. **Install dbt:**
+
+      ```sh
+      python -m venv .venv
+      source .venv/bin/activate
+      pip install -r requirements.txt
+      ```
+
+3. **Modify dbt Models:**
+   Navigate to the `./models/` directory and open the SQL files. You need to fill in the commented-out sections of the [models.](https://docs.getdbt.com/docs/build/sql-models)
+
+4. **Write Tests:**
+   Navigate to the `./tests/` directory and [create SQL files to test your models](https://docs.getdbt.com/docs/build/data-tests#singular-data-tests). Ensure that your tests cover the functionality of the models you modified. Optionally, how might you [add 'generic' tests to the project?](https://docs.getdbt.com/docs/build/data-tests#generic-data-tests). Optionally, can you replace some of the tests with out-of-the-box dbt functionality? 
+
+5. **Run dbt Commands:**
+
+   - **Seed:** Load the seed data into your PostgreSQL database.
+
+     ```sh
+     dbt seed
+     ```
+
+   - **Run:** Execute the models defined in your dbt project.
+
+     ```sh
+     dbt run
+     ```
+
+   - **Test:** Run tests on your dbt models.
+
+     ```sh
+     dbt test
+     ```
+
+6. (Optional) The password for our dev database is hardcoded into a file stored in git. This is a security risk. Fix it! Include instructions on how to run the project with better secret management below:
+
+      ```sh
+      # TODO: Add instructions for running `dbt` here
+      ```
+
+### Other Optional Enhancements
+
+- **Additional Models & Tests:** Feel free to add more models and tests to showcase your skills.
+- **CI/CD Implementation:** You can suggest or implement a CI/CD pipeline for automated testing and deployment.
+- **Configure dbt:** Modify the `dbt_project.yml` file to optimize your analytics.
+
+## Task 2 (Optional, 60-90 minutes)
+
+This task is designed to assess your ability to pull data from a public API using Python and write the results to a storage solution of your choice:
 
 1. Select a public API of your choice.
 2. Use Python to fetch data from the chosen API.
 3. Write the fetched data to a storage solution (e.g., local file, database, cloud storage).
 
-## Requirements
-
-- **Programming Language:** Python
-- **Time Limit:** 2 hours
-
-## Steps to Follow
+### API Task Steps
 
 1. **Select a Public API:**
    - Choose any public API that provides data you find interesting or relevant. Some examples include:
@@ -32,31 +109,17 @@ Your objective is to:
    - Choose a storage solution to store the fetched data. Examples include:
      - Writing to a local file (CSV, JSON, etc.)
      - Inserting into a database (SQLite, PostgreSQL, etc.)
-     - Uploading to cloud storage (AWS S3, Google Cloud Storage, etc.)
 
 4. **Document Your Work:**
-   - Create a README file explaining your approach, the API you chose, and how to run your script.
-   - Include any setup instructions if necessary.
-   - Address any limitations of your work.
-   - Consider future improvements or extensions.
+   Tell us how to run your script and check the output data with code here:
+   
+      ```sh
+      # TODO: Add instructions to run API pull and check data output here.
+      ```
 
-## Submission
-
-Please submit your work as a private GitHub repository. Add the following users as collaborators to the repository:
-    - <ds@onu.energy>
-    - <ar@onu.energy>
-
-## Evaluation Criteria
-
-- **Correctness:** Does the script correctly fetch and store the data?
-- **Code Quality:** Is the code well-organized, readable, and maintainable?
-- **Documentation:** Is the README clear and comprehensive?
-
-## Getting Started
+### Example Answer
 
 Here is an example to help you get started:
-
-### Example: Fetching Data from OpenWeatherMap API
 
 #### Step 1: Install Required Libraries
 
@@ -86,33 +149,27 @@ if __name__ == "__main__":
     save_to_file(weather_data)
 ```
 
-#### Step 3: Document Your Work (`README.md`)
+#### Step 3: Document Your Work
 
-```markdown
-# Onu.Energy Data Engineering Task
-
-## Overview
-
-This project demonstrates how to fetch data from the OpenWeatherMap API using Python and save it to a local JSON file.
-
-## How to Run
-
-1. Install the required libraries:
+```sh
+# 1. Install the required libraries:
     ```bash
     pip install requests
     ```
 
-2. Replace `'your_api_key'` in `fetch_data.py` with your OpenWeatherMap API key.
+# 2. Replace `'your_api_key'` in `fetch_data.py` with your OpenWeatherMap API key.
 
-3. Run the script:
+# 3. Run the script:
     ```bash
     python fetch_data.py
     ```
 
-4. The output will be saved to `output_data.json`.
+# 4. The output will be saved to `output_data.json`.
 ```
 
-Good luck, and we look forward to reviewing your submission!
+---
+
+Thank you for participating in this assignment. If you have any questions or need further assistance, feel free to reach out. Good luck!
 
 Best regards,
 
