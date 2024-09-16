@@ -153,18 +153,16 @@ if __name__ == "__main__":
 
 ```sh
 # 1. Install the required libraries:
-    ```bash
-    pip install requests
-    ```
+pip install requests
 
 # 2. Replace `'your_api_key'` in `fetch_data.py` with your OpenWeatherMap API key.
+vi fetch_data.py # Edit the file
 
 # 3. Run the script:
-    ```bash
-    python fetch_data.py
-    ```
+python fetch_data.py
 
 # 4. The output will be saved to `output_data.json`.
+head -n 10 output_data.json
 ```
 
 ---
